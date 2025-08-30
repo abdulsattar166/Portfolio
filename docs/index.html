@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Professional portfolio of Abdul Sattar, Software Engineering student and web developer">
-  <title>Abdul Sattar | Full Stack Developer</title>
+  <title>Abdul Sattar | GHL Experts | Full Stack Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -525,6 +525,121 @@
       background-clip: text;
     }
     
+    /* GHL Project Cards */
+    .ghl-project-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.4s ease;
+      margin-bottom: 2rem;
+      position: relative;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-left: 4px solid #3a0ca3;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s forwards;
+      animation-delay: calc(var(--animation-order) * 0.1s);
+    }
+    
+    .ghl-project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(58,12,163,0.1);
+    }
+    
+    .ghl-badge {
+      background: var(--gradient-1);
+      color: white;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    
+    /* Six Figures Media Card */
+    .sfm-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.4s ease;
+      margin-bottom: 2rem;
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-top: 4px solid #f72585;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s forwards;
+      animation-delay: calc(var(--animation-order) * 0.1s);
+    }
+    
+    .sfm-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(247,37,133,0.1);
+    }
+    
+    /* Feature List */
+    .feature-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .feature-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    
+    /* Video container styles */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      background: #000;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Subsection headers */
+    .subsection-header {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .subsection-header::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--gradient-2);
+      border-radius: 2px;
+    }
+    
     /* Responsive Adjustments */
     @media (max-width: 768px) {
       .hero-section {
@@ -552,6 +667,18 @@
       .navbar {
         background-color: rgba(255,255,255,0.95) !important;
       }
+      
+      .ghl-project-card, .sfm-card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .timeline-item {
+        padding-left: 1.5rem;
+      }
+      
+      .timeline::before {
+        left: 5px;
+      }
     }
   </style>
 </head>
@@ -559,12 +686,12 @@
   <!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container">
-      <img src="profile.jpg" alt="Abdul Sattar" class="profile-img mb-4 animate_animated animate_fadeIn">
+      <img src="profile.jpg" alt="Abdul Sattar" class="profile-img mb-4 animate__animated animate__fadeIn">
       <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Abdul Sattar</h1>
       <p class="typed-text lead mb-4 animate__animated animate__fadeIn"></p>
       <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp">
-        <a href="#https://wa.me/923359476448" class="btn btn-light btn-lg px-4 py-2">Contact Me</a>
-        <a href="My CV.pdf" download class="btn btn-outline-light btn-lg px-4 py-2">Download CV</a>
+        <a href="https://wa.me/923359476448" class="btn btn-light btn-lg px-4 py-2">Contact Me</a>
+        <a href="Abdul Sattar -CV.pdf" download class="btn btn-outline-light btn-lg px-4 py-2">Download CV</a>
       </div>
     </div>
   </section>
@@ -572,7 +699,10 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-3 animate__animated animate__fadeInLeft" href="#">AS</a>
+      <a class="navbar-brand fw-bold fs-3 animate__animated animate__fadeInLeft" href="#">
+  <img src="WhatsApp Image 2025-08-19 at 05.32.50_53745e6e.jpg" alt="My Logo" width="70" height="80">
+</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -705,24 +835,58 @@
     <div class="container">
       <h2 class="section-title text-center animate__animated animate__fadeIn">Professional Experience</h2>
       <div class="timeline">
+        <!-- Current Position -->
         <div class="timeline-item" style="--animation-order: 1">
-          <h4 class="fw-bold">Full Stack Developer Intern</h4>
+          <h4 class="fw-bold">GoHighLevel Expert & Full Stack Developer</h4>
           <p class="timeline-date">2024 - Present</p>
-          <p class="mb-2"><strong>NaxonSolutions</strong></p>
+          <p class="mb-2"><strong>NaxonSolutions, Islamabad</strong></p>
           <ul>
-            <li>Developed and maintained responsive web applications using modern frontend technologies</li>
-            <li>Implemented CRM automation solutions using GoHighLevel platform</li>
-            <li>Collaborated with team members using Git version control</li>
-            <li>Optimized web applications for maximum speed and scalability</li>
+            <li>Lead GHL implementation specialist for client projects</li>
+            <li>Develop custom websites using GoHighLevel's website builder with advanced customization</li>
+            <li>Design and implement high-converting sales funnels for diverse industries</li>
+            <li>Create complex automation workflows to streamline business processes</li>
+            <li>Integrate GHL with various third-party APIs and services</li>
+            <li>Train team members on GHL best practices and implementation</li>
           </ul>
         </div>
+        
+        <!-- Previous Position 1 -->
         <div class="timeline-item" style="--animation-order: 2">
-          <h4 class="fw-bold">Freelance Developer</h4>
-          <p class="timeline-date">2023 - Present</p>
+          <h4 class="fw-bold">Frontend Web Developer</h4>
+          <p class="timeline-date">2023 - 2024</p>
+          <p class="mb-2"><strong>Programmers Lab, Rawalpindi</strong></p>
           <ul>
-            <li>Built and deployed full-stack web applications for clients</li>
-            <li>Created custom CRM solutions for small businesses</li>
-            <li>Implemented responsive designs using Bootstrap and CSS frameworks</li>
+            <li>Developed responsive websites using HTML5, CSS3, JavaScript and Bootstrap</li>
+            <li>Implemented UI/UX designs with pixel-perfect precision</li>
+            <li>Collaborated with backend developers to integrate frontend with APIs</li>
+            <li>Optimized web applications for maximum speed and scalability</li>
+            <li>Mentored junior developers in frontend development best practices</li>
+          </ul>
+        </div>
+        
+        <!-- GHL Specialization at NaxonSolutions -->
+        <div class="timeline-item" style="--animation-order: 3">
+          <h4 class="fw-bold">GHL Implementation Specialist</h4>
+          <p class="timeline-date">2023 - 2024</p>
+          <p class="mb-2"><strong>NaxonSolutions, Islamabad</strong></p>
+          <ul>
+            <li><strong>Website Creation:</strong> Built 50+ custom websites using GHL's website builder for clients across various industries</li>
+            <li><strong>Funnel Development:</strong> Designed and implemented 30+ high-converting sales funnels with average conversion rate increase of 35%</li>
+            <li><strong>Automation:</strong> Created complex automation workflows saving clients an average of 15 hours/week</li>
+            <li><strong>Workflows:</strong> Developed customized workflows for lead management, appointment scheduling, and customer follow-ups</li>
+            <li><strong>Integration:</strong> Connected GHL with various CRMs, payment gateways, and marketing tools</li>
+          </ul>
+        </div>
+        
+        <!-- Freelance Experience -->
+        <div class="timeline-item" style="--animation-order: 4">
+          <h4 class="fw-bold">Freelance Developer & GHL Consultant</h4>
+          <p class="timeline-date">2022 - Present</p>
+          <ul>
+            <li>Built and deployed full-stack web applications for clients worldwide</li>
+            <li>Provided GHL implementation services for small businesses and agencies</li>
+            <li>Created custom CRM solutions using GHL for niche markets</li>
+            <li>Implemented responsive designs using modern CSS frameworks</li>
             <li>Provided technical consulting and problem-solving services</li>
           </ul>
         </div>
@@ -777,7 +941,7 @@
           </div>
         </div>
 
-       
+        <!-- Web Development Fundamentals -->
         <div class="col-md-4">
           <div class="card certificate-card h-100 border-0 shadow-sm">
             <div class="card-body text-center">
@@ -835,13 +999,275 @@
       </div>
     </div>
   </section>
+
   <!-- Projects Section -->
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title text-center">Featured Projects</h2>
+      
+      <!-- GoHighLevel Projects Section -->
+      <h3 class="subsection-header">GoHighLevel Projects</h3>
+      <div class="row mb-5">
+        <!-- GHL Website Creation -->
+        <div class="col-md-6">
+          <div class="ghl-project-card h-100" style="--animation-order: 1">
+            <div class="card-body p-4">
+              <span class="ghl-badge">GoHighLevel</span>
+              <h5 class="card-title fw-bold">Website Creation in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 223713.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">Custom website development using GoHighLevel's built-in website builder with advanced customization.</p>
+              <ul class="feature-list">
+                <li>Responsive design for all devices</li>
+                <li>Custom templates and themes</li>
+                <li>SEO optimization</li>
+                <li>Integration with CRM features</li>
+                <li>Lead capture forms</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Demo</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- GHL Automation -->
+        <div class="col-md-6">
+          <div class="ghl-project-card h-100" style="--animation-order: 2">
+            <div class="card-body p-4">
+              <span class="ghl-badge">GoHighLevel</span>
+              <h5 class="card-title fw-bold">Automation in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 224301.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">Custom workflow automation solutions to streamline business processes in GoHighLevel.</p>
+              <ul class="feature-list">
+                <li>Lead management automation</li>
+                <li>Email/SMS drip campaigns</li>
+                <li>Task automation</li>
+                <li>Calendar scheduling</li>
+                <li>API integrations</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Demo</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Second Row of GHL Projects -->
+      <div class="row mb-5">
+        <!-- GHL Funnel -->
+        <div class="col-md-6">
+          <div class="ghl-project-card h-100" style="--animation-order: 3">
+            <div class="card-body p-4">
+              <span class="ghl-badge">GoHighLevel</span>
+              <h5 class="card-title fw-bold">Funnel in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 224817.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">High-converting sales funnels built within GoHighLevel platform.</p>
+              <ul class="feature-list">
+                <li>Lead capture pages</li>
+                <li>Sales pages</li>
+                <li>Checkout pages</li>
+                <li>Upsell/downsell sequences</li>
+                <li>Conversion tracking</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Demo</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- GHL Workflow -->
+        <div class="col-md-6">
+          <div class="ghl-project-card h-100" style="--animation-order: 4">
+            <div class="card-body p-4">
+              <span class="ghl-badge">GoHighLevel</span>
+              <h5 class="card-title fw-bold">Workflow in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 225545.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">Custom workflows to automate complex business processes in GoHighLevel.</p>
+              <ul class="feature-list">
+                <li>Multi-step automation</li>
+                <li>Conditional logic</li>
+                <li>Team collaboration</li>
+                <li>Notification systems</li>
+                <li>Performance analytics</li>
+              </ul>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Demo</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Six Figures Media Project -->
+      <h3 class="subsection-header">Major Projects</h3>
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="sfm-card" style="--animation-order: 1">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">My GHL Representative  Website in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-07-28 031824.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">A complete digital marketing solution built on GoHighLevel platform for Myself to Represent The GHL All functionality.</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Custom designed website</li>
+                    <li>Lead generation system</li>
+                    <li>Automated follow-up sequences</li>
+                    <li>Client management portal</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Appointment scheduling</li>
+                    <li>Payment processing</li>
+                    <li>Analytics dashboard</li>
+                    <li>Team collaboration tools</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Live Project</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="sfm-card" style="--animation-order: 1">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Six Figures Media Website in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 223222.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">A complete digital marketing solution built on GoHighLevel platform for Six Figures Media.</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Custom designed website</li>
+                    <li>Lead generation system</li>
+                    <li>Automated follow-up sequences</li>
+                    <li>Client management portal</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Appointment scheduling</li>
+                    <li>Payment processing</li>
+                    <li>Analytics dashboard</li>
+                    <li>Team collaboration tools</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Live Project</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Six Figures Media Project -->
+      
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <div class="sfm-card" style="--animation-order: 1">
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">SALESGENI Website in GHL</h5>
+              
+              <!-- Video Demo -->
+              <div class="video-container">
+                <iframe src="Screen Recording 2025-08-10 223713.mp4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+              </div>
+              
+              <p class="card-text">A complete digital marketing solution built on GoHighLevel platform for SALESGENI.</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Custom designed website</li>
+                    <li>Lead generation system</li>
+                    <li>Automated follow-up sequences</li>
+                    <li>Client management portal</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li>Appointment scheduling</li>
+                    <li>Payment processing</li>
+                    <li>Analytics dashboard</li>
+                    <li>Team collaboration tools</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-custom">View Live Project</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Other Projects Row -->
+       <h3 class="subsection-header">Other Projects</h3>
       <div class="row">
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card" style="--animation-order: 2">
             <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="card-img-top" alt="YouTube Clone">
             <div class="card-body">
               <h5 class="card-title fw-bold">YouTube Clone</h5>
@@ -854,7 +1280,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card" style="--animation-order: 3">
             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Portfolio">
             <div class="card-body">
               <h5 class="card-title fw-bold">Portfolio Website</h5>
@@ -866,8 +1292,21 @@
             </div>
           </div>
         </div>
+         <div class="col-md-4">
+          <div class="project-card" style="--animation-order: 3">
+            <img src="Screenshot 2025-08-19 052143.png" class="card-img-top" alt="Portfolio">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Simple Calculator </h5>
+              <p class="card-text">This responsive Calculator website built with React JS showcasing my skills and projects.</p>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-custom">Live Demo</a>
+                <a href="#" class="btn btn-sm btn-outline-primary">View Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col-md-4">
-          <div class="project-card">
+          <div class="project-card" style="--animation-order: 4">
             <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" class="card-img-top" alt="Resume Builder">
             <div class="card-body">
               <h5 class="card-title fw-bold">Resume Builder</h5>
@@ -879,13 +1318,12 @@
           </div>
         </div>
       </div>
+      
       <div class="text-center mt-5">
         <a href="https://github.com/abdulsattar166" target="_blank" class="btn btn-custom px-4 py-2">View All Projects on GitHub</a>
       </div>
     </div>
   </section>
-
-  
 
   <!-- Contact Section -->
   <section id="contact" class="section">
@@ -973,11 +1411,15 @@
     // Typed.js initialization
     var typed = new Typed(".typed-text", {
       strings: [
+        "GHl Expert",
         "Software Engineer",
+        "Automation Expert",
         "Web Developer",
         "CRM Specialist",
+        "GHL Expert",
         "Tech Enthusiast",
-        "Problem Solver"
+        "Problem Solver",
+        "GHL Expert"
       ],
       typeSpeed: 50,
       backSpeed: 30,
